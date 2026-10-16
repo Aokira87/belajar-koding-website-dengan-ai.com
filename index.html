@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI WEB DESIGN ACADEMY</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Animasi Background Canvas (Partikel & Hujan Kode Dinamis) -->
+    <canvas id="cyberCanvas"></canvas>
+    <div class="digital-grid"></div>
+
+    <!-- Container Utama -->
+    <div class="app-container">
+
+        <!-- HEADER -->
+        <header class="app-header">
+            <div class="logo-box">
+                <span class="logo-symbol">&lt;/&gt;</span>
+                <div class="logo-text">
+                    <h1>AI WEB DESIGN <span class="highlight">ACADEMY</span></h1>
+                    <p class="developer-tag">Developer: Aokira</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="progress-indicator-mini">
+                    <span>Progres: <strong id="progressPercent">0%</strong></span>
+                    <div class="mini-bar"><div id="miniBarFill" class="bar-fill"></div></div>
+                </div>
+                <button class="sound-toggle-btn" id="soundToggleBtn" title="Audio Efek Nyala/Mati"><i class="fa-solid fa-volume-high" id="soundIcon"></i></button>
+                <button class="sound-toggle-btn" id="resetProgressBtn" title="Reset Progres"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+        </header>
+
+        <!-- KONTEN UTAMA -->
+        <main class="main-content">
+
+            <!-- HALAMAN 1: WELCOME -->
+            <section id="pageWelcome" class="page-view active">
+                <div class="welcome-hero">
+                    <div class="hero-badge"><i class="fa-solid fa-brain"></i> Platform Edukasi AI Masa Depan</div>
+                    <h2>BELAJAR MEMBUAT WEBSITE <br><span class="neon-cyan">DARI NOL DENGAN AI</span></h2>
+                    <p class="hero-desc">
+                        "Belum bisa coding? Tidak masalah! Pelajari cara membuat tampilan website sendiri menggunakan bantuan AI, mulai dari menulis prompt hingga menjalankan hasil website buatanmu."
+                    </p>
+
+                    <div class="info-cards-grid">
+                        <div class="info-card"><i class="fa-solid fa-graduation-cap"></i><span>Cocok untuk pemula</span></div>
+                        <div class="info-card"><i class="fa-solid fa-code-compare"></i><span>Tanpa harus jago coding</span></div>
+                        <div class="info-card"><i class="fa-solid fa-mobile-screen-button"></i><span>Bisa belajar lewat HP</span></div>
+                        <div class="info-card"><i class="fa-solid fa-robot"></i><span>ChatGPT & Gemini AI</span></div>
+                    </div>
+
+                    <div class="developer-info-box">Developer / Pembuat: <strong>Aokira</strong></div>
+
+                    <div class="hero-action">
+                        <button class="btn-cyber primary" id="startBtn">
+                            <span>MULAI BELAJAR</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="hero-footer-text">"Your First Website Starts Here."</div>
+                </div>
+            </section>
+
+            <!-- HALAMAN 2: TUTORIAL (Langkah 1 s.d 8 yang diringkas agar tidak kepotong) -->
+            <section id="pageTutorial" class="page-view">
+                <div class="tutorial-layout">
+                    
+                    <aside class="tutorial-sidebar">
+                        <h3>Daftar Langkah</h3>
+                        <ul class="steps-nav-list" id="stepsNavList">
+                            <li class="step-nav-item active" data-step="1"><span>01</span> ChatGPT & Prompt</li>
+                            <li class="step-nav-item" data-step="2"><span>02</span> Salin Arahan</li>
+                            <li class="step-nav-item" data-step="3"><span>03</span> Buka Gemini AI</li>
+                            <li class="step-nav-item" data-step="4"><span>04</span> AI Buat Kode</li>
+                            <li class="step-nav-item" data-step="5"><span>05</span> Buka Liveweave</li>
+                            <li class="step-nav-item" data-step="6"><span>06</span> Area Editor</li>
+                            <li class="step-nav-item" data-step="7"><span>07</span> Bersihkan Kode</li>
+                            <li class="step-nav-item" data-step="8"><span>08</span> Tempel & Hasil</li>
+                        </ul>
+                    </aside>
+
+                    <div class="tutorial-content-panel">
+
+                        <!-- LANGKAH 1 (Ringkas & Pas di HP) -->
+                        <div class="tutorial-step-card active" data-step-content="1">
+                            <div class="step-header-badge">Langkah 1 dari 8</div>
+                            <h2>Langkah 1: Tentukan Website</h2>
+                            <p class="step-desc">
+                                Buka ChatGPT untuk menyusun prompt (arahan) yang jelas agar AI lebih mudah memahami keinginan kita.
+                            </p>
+                            
+                            <div class="code-prompt-box">
+                                <div class="box-header">
+                                    <span>Contoh Prompt Profesional</span>
+                                    <button class="btn-copy" id="copyPromptBtn">
+                                        <i class="fa-regular fa-copy"></i> SALIN PROMPT
+                                    </button>
+                                </div>
+                                <pre><code id="promptTextContent">Buatkan rancangan website peralatan kelas dengan ketentuan:
+1. Warna biru & cyan, tema Jepang modern (sakura/Fuji).
+2. Fitur Jam digital & Notes catatan.
+3. Desain responsif HP & komputer.
+4. Pisahkan ke 3 file: HTML, CSS, & JS.</code></pre>
+                            </div>
+
+                            <div class="tip-box">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span><strong>Tips:</strong> Jelaskan tema, warna, dan fitur secara spesifik agar hasilnya optimal.</span>
+                            </div>
+
+                            <div class="step-navigation-buttons">
+                                <button class="btn-cyber secondary prev-step" disabled><i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="btn-cyber primary next-step">Lanjut <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- LANGKAH 2 -->
+                        <div class="tutorial-step-card" data-step-content="2">
+                            <div class="step-header-badge">Langkah 2 dari 8</div>
+                            <h2>Langkah 2: Salin Prompt</h2>
+                            <p class="step-desc">Periksa hasil dari ChatGPT, pastikan fitur dan temanya sudah sesuai, lalu salin seluruh teks prompt tersebut.</p>
+
+                            <div class="checklist-section">
+                                <h4>Checklist Persiapan:</h4>
+                                <label class="check-item"><input type="checkbox" class="task-check"> Prompt sudah lengkap</label>
+                                <label class="check-item"><input type="checkbox" class="task-check"> Tema & fitur sudah jelas</label>
+                            </div>
+
+                            <div class="step-navigation-buttons">
+                                <button class="btn-cyber secondary prev-step"><i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="btn-cyber primary next-step">Lanjut <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- LANGKAH 3 -->
+                        <div class="tutorial-step-card" data-step-content="3">
+                            <div class="step-header-badge">Langkah 3 dari 8</div>
+                            <h2>Langkah 3: Buka Gemini AI</h2>
+                            <p class="step-desc">Kunjungi situs Gemini AI untuk menghasilkan kode program berdasarkan prompt yang sudah disalin.</p>
+                            
+                            <div class="center-action-box">
+                                <a href="https://gemini.google.com/" target="_blank" class="btn-cyber external-link-btn">
+                                    <i class="fa-solid fa-globe"></i> BUKA GEMINI AI ↗
+                                </a>
+                            </div>
+
+                            <div class="step-navigation-buttons">
+                                <button class="btn-cyber secondary prev-step"><i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="btn-cyber primary next-step">Lanjut <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- LANGKAH 4 -->
+                        <div class="tutorial-step-card" data-step-content="4">
+                            <div class="step-header-badge">Langkah 4 dari 8</div>
+                            <h2>Langkah 4: AI Membuat Kode</h2>
+                            <p class="step-desc">Tempel prompt ke Gemini. Gemini akan membagi kode menjadi 3 bagian penting:</p>
+                            
+                            <div class="code-cards-grid">
+                                <div class="code-explain-card html-card">
+                                    <div class="card-top"><i class="fa-brands fa-html5"></i> <h4>HTML</h4></div>
+                                    <p>Struktur utama & elemen teks.</p>
+                                </div>
+                                <div class="code-explain-card css-card">
+                                    <div class="card-top"><i class="fa-brands fa-css3-alt"></i> <h4>CSS</h4></div>
+                                    <p>Tampilan, warna, & tata letak.</p>
+                                </div>
+                                <div class="code-explain-card js-card">
+                                    <div class="card-top"><i class="fa-brands fa-js"></i> <h4>JS</h4></div>
+                                    <p>Interaksi & tombol aktif.</p>
+                                </div>
+                            </div>
+
+                            <div class="step-navigation-buttons">
+                                <button class="btn-cyber secondary prev-step"><i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="btn-cyber primary next-step">Lanjut <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- LANGKAH 5 -->
+                        <div class="tutorial-step-card" data-step-content="5">
+                            <div class="step-header-badge">Langkah 5 dari 8</div>
+                            <h2>Langkah 5: Buka Liveweave</h2>
+                            <p class="step-desc">Buka editor kode online Liveweave di browser untuk menjalankan kodenya.</p>
+                            
+                            <div class="center-action-box">
+                                <a href="https://liveweave.com/" target="_blank" class="btn-cyber external-link-btn">
+                                    <code class="fa-solid fa-code"></i> BUKA LIVEWEAVE ↗
+                                </a>
+                            </div>
+
+                            <div class="step-navigation-buttons">
+                                <button class="btn-cyber secondary prev-step"><i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="btn-cyber primary next-step">Lanjut <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- LANGKAH 6 -->
+                        <div class="tutorial-step-card" data-step-content="6">
+                            <div class="step-header-badge">Langkah 6 dari 8</div>
+                            <h2>Langkah 6: Kenali Panel Editor</h2>
+                            <p class="step-desc">Liveweave menyediakan panel terpisah untuk HTML, CSS, JavaScript, dan hasil Live Preview.</p>
+
+                            <div class="editor-mockup-preview">
+                                <div class="mockup-panel"><span>HTML</span></div>
+                                <div class="mockup-panel"><span>CSS</span></div>
+                                <div class="mockup-panel"><span>JS</span></div>
+                                <div class="mockup-panel preview"><span>Preview</span></div>
+                            </div>
+
+                            <div class="step-navigation-buttons">
+                                <button class="btn-cyber secondary prev-step"><i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="btn-cyber primary next-step">Lanjut <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- LANGKAH 7 -->
+                        <div class="tutorial-step-card" data-step-content="7">
+                            <div class="step-header-badge">Langkah 7 dari 8</div>
+                            <h2>Langkah 7: Siapkan Panel Kode</h2>
+                            <p class="step-desc">Hapus kode contoh bawaan editor agar tidak bercampur dengan kode baru buatan Gemini.</p>
+
+                            <div class="checklist-section">
+                                <h4>Checklist Editor:</h4>
+                                <label class="check-item"><input type="checkbox" class="task-check"> Panel HTML dikosongkan</label>
+                                <label class="check-item"><input type="checkbox" class="task-check"> Panel CSS dikosongkan</label>
+                                <label class="check-item"><input type="checkbox" class="task-check"> Panel JS dikosongkan</label>
+                            </div>
+
+                            <div class="step-navigation-buttons">
+                                <button class="btn-cyber secondary prev-step"><i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="btn-cyber primary next-step">Lanjut <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- LANGKAH 8 -->
+                        <div class="tutorial-step-card" data-step-content="8">
+                            <div class="step-header-badge">Langkah 8 dari 8</div>
+                            <h2>Langkah 8: Tempel Kode & Selesai!</h2>
+                            <p class="step-desc">Salin kode dari Gemini satu per satu dan tempel ke panel Liveweave yang sesuai. Lihat hasilnya langsung di Preview!</p>
+
+                            <div class="transfer-steps-grid">
+                                <div class="transfer-box html"><h4>HTML</h4><p>Tempel ke panel HTML</p></div>
+                                <div class="transfer-box css"><h4>CSS</h4><p>Tempel ke panel CSS</p></div>
+                                <div class="transfer-box js"><h4>JS</h4><p>Tempel ke panel JS</p></div>
+                            </div>
+
+                            <div class="step-navigation-buttons">
+                                <button class="btn-cyber secondary prev-step"><i class="fa-solid fa-arrow-left"></i></button>
+                                <button class="btn-cyber success finish-tutorial-btn">Selesai & Lihat Hasil <i class="fa-solid fa-flag-checkered"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- HALAMAN 3: SELESAI -->
+            <section id="pageFinish" class="page-view">
+                <div class="finish-hero">
+                    <div class="confetti-container" id="confettiBox"></div>
+                    <div class="badge-congrats"><i class="fa-solid fa-trophy"></i> TAHAP BELAJAR SELESAI</div>
+                    <h2>SELAMAT! KAMU BERHASIL MEMAHAMI <br><span class="neon-green">ALUR PEMBUATAN WEBSITE AI!</span></h2>
+                    <p class="finish-desc">Kamu sudah belajar cara menyusun prompt, meminta kode ke AI, memisahkan struktur, dan menjalankannya.</p>
+
+                    <div class="achievements-container">
+                        <h3>Pencapaian Kamu:</h3>
+                        <div class="achievement-badges">
+                            <span class="ach-badge"><i class="fa-solid fa-medal"></i> Prompt Engineer Pemula</span>
+                            <span class="ach-badge"><i class="fa-solid fa-medal"></i> AI Web Creator</span>
+                        </div>
+                    </div>
+
+                    <div class="finish-actions">
+                        <button class="btn-cyber secondary" id="repeatTutorialBtn"><i class="fa-solid fa-rotate-right"></i> ULANGI</button>
+                        <button class="btn-cyber primary" id="backHomeBtn"><i class="fa-solid fa-house"></i> BERANDA</button>
+                    </div>
+
+                    <footer class="final-page-footer">
+                        <p><strong>AI WEB DESIGN ACADEMY</strong></p>
+                        <p>Developer: Aokira</p>
+                    </footer>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- TOAST NOTIFICATION -->
+        <div id="toastNotification" class="toast-notification">
+            <i class="fa-solid fa-circle-check"></i>
+            <span id="toastMessage">Berhasil!</span>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                              </html>
